@@ -42,6 +42,8 @@ class List:
         tmp = Node(value_for_insert)
         tmp.next_node = target.next_node
         target.next_node = tmp
+        if target == self.tail:
+            self.tail = tmp
 
     def delete(self, value):
         current = self.top.next_node
@@ -73,5 +75,6 @@ lst.delete(17)
 lst.delete(23)
 lst.prepend(11)
 lst.prepend(23)
-lst.insert(7, 11)
+lst.insert(7, 5)
+lst.append(34)
 print(lst)
