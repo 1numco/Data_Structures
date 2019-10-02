@@ -57,6 +57,14 @@ class List:
             prev = current
             current = current.next_node
 
+    def length(self):
+        count = 0
+        current = self.top.next_node
+        while current is not None:
+            count += 1
+            current = current.next_node
+        return count
+
     def __str__(self):
         current = self.top.next_node
         values = "["
@@ -71,10 +79,14 @@ lst = List()
 lst.append(5)
 lst.append(17)
 lst.append(23)
+print(lst)
 lst.delete(17)
 lst.delete(23)
+print(lst)
 lst.prepend(11)
 lst.prepend(23)
+print(lst)
 lst.insert(7, 5)
 lst.append(34)
 print(lst)
+print(lst.length())
