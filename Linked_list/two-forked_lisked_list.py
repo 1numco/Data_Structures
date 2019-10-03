@@ -58,19 +58,13 @@ class List:
         return values + "]"
 
 
-# lst = List()
-# lst.append(1)
-# lst.append(2)
-# lst.append(3)
-# lst.append(5)
-# lst.append(7)
-# print(lst.__str__())
-# "[1, 2, 3, 5, 7]"
-# lst.remove(3)
-# lst.remove(7)
-# print(lst.__str__())
-# "[1, 2, 5]"
-# five = lst.top.next_node.next_node.next_node
-# print(five.value)
-# print(five.next_node)
-# print(five.prev_node.value)
+lst = List()
+lst.append(1)
+lst.append(2)
+lst.append(3)
+lst.prepend(5)
+lst.append(7)
+print(lst.__str__())
+lst.remove(3)
+lst.remove(7)
+print(lst.__str__())
