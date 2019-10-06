@@ -65,6 +65,24 @@ class List:
             current = current.next_node
         return count
 
+    def sort(self):
+        new_top = Node()
+        current = self.top
+        while current.next_node is not None:
+            max_before = current
+            max_node = current.next_node
+            tmp = current
+            while tmp.next_node is not None:
+                if tmp.next_node.value > max_node.value :
+                    max_before = tmp
+                    max_node = tmp.next_node
+                tmp = tmp.next_node
+            max_before.next_node = max_node.next_node
+            max_node.next_node = new_top.next_node
+            new_top.next_node = max_node
+        self.top = new_top
+
+
     def __str__(self):
         current = self.top.next_node
         values = "["
@@ -89,4 +107,10 @@ print(lst)
 lst.insert(7, 5)
 lst.append(34)
 print(lst)
-print(lst.length())
+lst.sort()
+print(lst)
+lst.insert(713, 5)
+lst.append(367)
+lst.delete(23)
+lst.prepend(11)
+print(lst)
